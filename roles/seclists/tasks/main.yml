@@ -1,0 +1,7 @@
+---
+# Install SecLists
+- name: Clone SecLists
+  git:
+    repo: https://github.com/danielmiessler/SecLists.git
+    dest: /opt/SecLists
+    depth: 1 

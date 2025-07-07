@@ -2,7 +2,7 @@ check for updates & upgrade
 change theme
 change bash appearance
 chnage bashrc for root & user
-install terminator
+#install terminator
 change terminator config for root & user
 
 install Obsidian
@@ -10,27 +10,28 @@ install Obsidian
 Add FoxyProxy to firefox-esr
 install firefox latest version
 install vmware workstation pro
-install redshift (night mode)
+#install redshift (night mode)
 
 install seclists (clone from github)
 change workspaces from 2 to 4 ( gsettings set org.mate.Marco.general num-workspaces 6 )
 
-install vscode
+#install vscode
     copy vscode themes and settings (.vscode)
 install cursor
 install Docker
-Install jq
-install exiftool
-install exploitdb
+#Install jq
+#install exiftool
+#install exploitdb
 
 install username-anarchy
 Download & place pspy in /opt
 install wpscan
 download chisel standalone binary
 fix wpscan by adding "require logger" in the wpscan binary
-apt install ftp
+# apt install ftp
 pip install git-dumper
 intall snmpwalk
 install tftp
 install xfreerdp "apt install freerdp2-x11"
 install steghide
+install uploadserver

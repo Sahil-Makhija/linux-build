@@ -1,0 +1,23 @@
+---
+# Install Obsidian
+- name: Download Obsidian AppImage
+  get_url:
+    url: "https://github.com/obsidianmd/obsidian-releases/releases/latest/download/Obsidian-1.5.3.AppImage"
+    dest: "/opt/Obsidian.AppImage"
+    mode: '0755'
+
+- name: Create Obsidian desktop entry
+  copy:
+    content: |
+      [Desktop Entry]
+      Name=Obsidian
+      Exec=/opt/Obsidian.AppImage --no-sandbox
+      Terminal=false
+      Type=Application
+      Icon=obsidian
+      StartupWMClass=obsidian
+      Comment=Obsidian
+      MimeType=x-scheme-handler/obsidian;
+      Categories=Office;
+    dest: /usr/share/applications/obsidian.desktop
+    mode: '0644' 

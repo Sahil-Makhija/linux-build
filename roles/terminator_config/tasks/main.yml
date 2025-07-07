@@ -1,0 +1,30 @@
+---
+# Terminator configuration for root
+- name: Create terminator config directory for root
+  file:
+    path: /root/.config/terminator
+    state: directory
+    mode: '0755'
+
+- name: Configure terminator for root
+  copy:
+    src: terminator_root.conf
+    dest: /root/.config/terminator/config
+    mode: '0644'
+
+# Terminator configuration for user
+- name: Create terminator config directory for user
+  file:
+    path: "{{ home_dir }}/.config/terminator"
+    state: directory
+    owner: "{{ regular_user }}"
+    group: "{{ regular_user }}"
+    mode: '0755'
+
+- name: Configure terminator for user
+  copy:
+    src: terminator_user.conf
+    dest: "{{ home_dir }}/.config/terminator/config"
+    owner: "{{ regular_user }}"
+    group: "{{ regular_user }}"
+    mode: '0644' 

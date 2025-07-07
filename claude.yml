@@ -1,0 +1,21 @@
+---
+- name: Complete System Setup and Configuration
+  hosts: localhost
+  become: yes
+  vars:
+    regular_user: "{{ ansible_user_id }}"
+    home_dir: "/home/{{ regular_user }}"
+  roles:
+    - apt_packages
+    - opt_permissions
+    - terminator_config
+    - bash_config
+    - obsidian
+    - firefox
+    - workspaces
+    - username_anarchy
+    - seclists
+    - pspy
+    - wpscan
+    - chisel
+    - cursor

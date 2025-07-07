@@ -1,0 +1,9 @@
+---
+# Set workspaces to 
+- name: Set number of workspaces to 3
+  become_user: "{{ regular_user }}"
+  shell: |
+    export DISPLAY=:0
+    gsettings set org.mate.Marco.general num-workspaces 3
+  environment:
+    DISPLAY: ":0" 

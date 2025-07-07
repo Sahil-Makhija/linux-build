@@ -1,0 +1,8 @@
+---
+# Install username-anarchy
+- name: Clone username-anarchy
+  git:
+    repo: https://github.com/urbanadventurer/username-anarchy.git
+    dest: /opt/tools/username-anarchy
+    # 'depth: 1' means only the latest commit is cloned, not the full history.
+    depth: 1 

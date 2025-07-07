@@ -1,0 +1,22 @@
+---
+# Install WPScan
+- name: Install WPScan gem
+  gem:
+    name: wpscan
+    state: present 
+
+# This Ansible task ensures that the line "require 'logger'" is present in the /usr/local/bin/wpscan Ruby script.
+# It inserts this line immediately after any line that matches "require 'rubygems'".
+# This is necessary to fix issues where WPScan expects the 'logger' library to be loaded, but it is not explicitly required in the script.
+# The blockinfile module is used to manage this insertion, and the "backup: yes" option ensures that a backup of the original file is created before any changes are made.
+# By default, Ansible creates the backup in the same directory as the target file (/usr/local/bin/) with a unique suffix (such as /usr/local/bin/wpscan.<timestamp>.bak).
+- name: Ensure 'require logger' is present in wpscan binary
+  blockinfile:
+    path: /usr/local/bin/wpscan
+    marker: "# {mark} ANSIBLE MANAGED BLOCK: ensure require logger"
+    insertafter: |
+      ^require 'rubygems'
+    block: |
+      require 'logger'
+    backup: yes
+  become: yes

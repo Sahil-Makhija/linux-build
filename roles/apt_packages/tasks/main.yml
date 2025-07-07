@@ -1,0 +1,28 @@
+---
+# All apt-related tasks from claude.yml
+- name: Update package cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Upgrade all packages
+  apt:
+    upgrade: dist
+    autoremove: yes
+    autoclean: yes
+
+- name: Install basic packages
+  apt:
+    name:
+      - curl
+      - wget
+      - git
+      - unzip
+      - ftp
+      - jq
+      - exiftool
+      - terminator
+      - redshift
+      - code
+      - exploitdb
+    state: present

@@ -1,0 +1,11 @@
+---
+# Download Chisel
+- name: Download Chisel
+  get_url:
+    url: "https://github.com/jpillora/chisel/releases/latest/download/chisel_1.9.1_linux_amd64.gz"
+    dest: "/tmp/chisel.gz"
+
+- name: Extract Chisel
+  shell: |
+    gunzip -c /tmp/chisel.gz > /opt/chisel
+    chmod +x /opt/chisel 

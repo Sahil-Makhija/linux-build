@@ -1,0 +1,7 @@
+---
+# Create /opt permissions
+- name: Set /opt permissions
+  file:
+    path: /opt
+    mode: '0755'
+    recurse: yes 

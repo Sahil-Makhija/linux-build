@@ -1,0 +1,22 @@
+---
+# Install Cursor
+- name: Download Cursor
+  get_url:
+    url: "https://download.todesktop.com/230313mzl4w4u92/cursor-0.32.3-build-240513yb11b75l7-x86_64.AppImage"
+    dest: "/opt/cursor.AppImage"
+    mode: '0755'
+
+- name: Create Cursor desktop entry
+  copy:
+    content: |
+      [Desktop Entry]
+      Name=Cursor
+      Exec=/opt/cursor.AppImage --no-sandbox
+      Terminal=false
+      Type=Application
+      Icon=cursor
+      StartupWMClass=cursor
+      Comment=Cursor AI Code Editor
+      Categories=Development;
+    dest: /usr/share/applications/cursor.desktop
+    mode: '0644' 

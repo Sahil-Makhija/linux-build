@@ -1,0 +1,18 @@
+---
+# Bash configuration for root
+- name: Copy full bashrc for root
+  copy:
+    src: root_block
+    dest: /root/.bashrc
+    owner: root
+    group: root
+    mode: '0644'
+
+# Bash configuration for user
+- name: Copy full bashrc for user
+  copy:
+    src: bashrc_user_block
+    dest: "{{ home_dir }}/.bashrc"
+    owner: "{{ regular_user }}"
+    group: "{{ regular_user }}"
+    mode: '0644' 

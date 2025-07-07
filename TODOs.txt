@@ -1,0 +1,18 @@
+
+change theme
+
+
+Add FoxyProxy to firefox-esr
+install vmware workstation pro
+
+
+copy vscode themes and settings (.vscode)
+install Docker
+
+download chisel standalone binary
+pip install git-dumper
+intall snmpwalk
+install tftp
+install xfreerdp "apt install freerdp2-x11"
+install steghide
+install uploadserver
