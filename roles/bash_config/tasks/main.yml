@@ -8,6 +8,11 @@
     group: root
     mode: '0644'
 
+- name: Load mate terminal settings for root
+  shell: dconf load /org/mate/terminal/ < mate-terminal-settings_root.dconf
+  args:
+    chdir: "{{ role_path }}/files"
+
 # Bash configuration for user
 - name: Copy full bashrc for user
   copy:
@@ -15,4 +20,10 @@
     dest: "{{ home_dir }}/.bashrc"
     owner: "{{ regular_user }}"
     group: "{{ regular_user }}"
-    mode: '0644' 
+    mode: '0644'
+
+- name: Load mate terminal settings for user
+  become_user: "{{ regular_user }}"
+  shell: dconf load /org/mate/terminal/ < mate-terminal-settings_user.dconf
+  args:
+    chdir: "{{ role_path }}/files" 

@@ -25,4 +25,13 @@
       - redshift
       - code
       - exploitdb
+      - snmp
+      - tftp
+      - freerdp2-x11
+      - steghide
     state: present
+
+- name: Remove codium
+  apt:
+    name: codium
+    state: absent
