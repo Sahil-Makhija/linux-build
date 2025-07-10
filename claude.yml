@@ -19,3 +19,5 @@
     - wpscan
     - chisel
     - cursor
+    - python_tools
+    - install_kerbrute

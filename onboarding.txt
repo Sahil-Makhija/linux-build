@@ -34,6 +34,6 @@ download chisel standalone binary
 #install xfreerdp "apt install freerdp2-x11"
 #install steghide
 
-pip install git-dumper
-pip install uploadserver
+#pip install git-dumper
+#pip install uploadserver
 #uninstall codium
