@@ -5,3 +5,5 @@ apt install oathtool
 install proxychains4
 
 assetfinder
+install krb5-user
+install ntpdate
